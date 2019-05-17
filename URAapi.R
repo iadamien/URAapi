@@ -53,6 +53,9 @@ df_prprc %>%
   filter(leaseDate == max(leaseDate)) -> prprc_export
 prprc_export$leaseDate <-format(as.Date(prprc_export$leaseDate), "%m%y")
 
+#reorder columns
+prprc_export <- prprc_export[c(8,7,10,5,11,6,9,1,2,3,4)]
+
 #export to csv
 write.csv(prprc_export,paste("URA", max(prprc_export$leaseDate), ".csv"), na="")
 paste("You can find your output file in", getwd())
