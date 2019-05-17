@@ -54,5 +54,5 @@ df_prprc %>%
 prprc_export$leaseDate <-format(as.Date(prprc_export$leaseDate), "%m%y")
 
 #export to csv
-write.csv(prprc_export,paste("URA", max(prprc_export$leaseDate), ".csv"))
+write.csv(prprc_export,paste("URA", max(prprc_export$leaseDate), ".csv"), na="")
 paste("You can find your output file in", getwd())
